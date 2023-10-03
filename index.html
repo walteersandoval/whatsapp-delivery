@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tienda de Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXENXeLrsxk1HLVfoJHZ_FRrj9D7Tk_LObdxvGp8jvsayCHR5_vt8zMuf-InkOCQ8sMR8&usqp=CAU" alt="Arasamovil Logo" class="logo-img">
+      </div>
+      <!-- Barra de búsqueda -->
+      <div class="search-bar">
+        <input type="text" id="product-search" placeholder="Buscar productos...">
+      </div>
+      <!-- Botón para mostrar/ocultar el carrito en dispositivos móviles -->
+      <button id="toggle-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+    </header>
+    <hr class="app-divider">
+    <span class="logo-text">Productos</span>
+    <div class="app-banner">
+      <img src="https://www.amway.com.hn/img_pict/520_Common/carrusel/Lanzamiento_Banner_UY_1.jpg" alt="Banner de la PWA" class="app-banner-img">
+    </div>
+    <hr class="app-divider">
+    <div class="catergories">
+      <label for="category-filter">Filtrar por categoría:</label>
+      <select id="category-filter">
+        <option value="todos">Todos</option>
+        <option value="Electrónica">Electrónica</option>
+        <option value="Ropa">Ropa</option>
+        <!-- Agrega opciones para otras categorías aquí -->
+      </select>
+    </div>
+    <div id="notification-container"></div>
+    <main>
+      <aside class="cart">
+        <h2>Carrito de Compras</h2>
+        <hr class="app-divider">
+        <ul id="cart-items">
+          <!-- Aquí se mostrarán los elementos del carrito desde JavaScript -->
+        </ul>
+        <div class="total-container">
+          <p id="cart-subtotal">Subtotal: L0.00</p>
+          <p id="delivery-fee">Tarifa de entrega: L50.00</p>
+          <hr class="app-divider">
+          <p id="cart-total">Total: L0.00</p>
+        </div>
+        <!-- Div separado para el formulario -->
+        <div class="form-container">
+          <label for="delivery-method">Método de Entrega:</label>
+          <select id="delivery-method">
+            <option value="recoger">Recoger en Comercio</option>
+            <option value="entrega">Entrega</option>
+          </select>
+          <label for="payment-method">Método de Pago:</label>
+          <select id="payment-method">
+            <option value="efectivo">Efectivo</option>
+            <option value="enlace-pago">Enlace de Pago</option>
+          </select>
+          <input type="text" id="delivery-address" placeholder="Dirección de Entrega">
+          <input type="text" id="user-name" placeholder="Nombre del Usuario">
+          <input type="text" id="user-phone" placeholder="Número del Usuario">
+          <button id="send-cart">Enviar Pedido a WhatsApp</button>
+        </div>
+      </aside>
+      <section class="product-list">
+        <!-- Aquí se mostrarán los productos desde JavaScript -->
+      </section>
+    </main>
+    <!-- index.html -->
+    <!-- ... (código HTML existente) -->
+    <!--<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch((error) => {
+                console.error('Error al registrar el Service Worker:', error);
+            });
+    }
+</script>--->
+    <script src="script.js"></script>
+  </body>
+</html>
